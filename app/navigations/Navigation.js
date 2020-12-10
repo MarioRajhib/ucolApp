@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import Drawer from 'react-native-drawer'
 
 import PantallaPrincipal from "../screens/PantallaPrincipal";
 import Federacion from "../screens/Federacion";
@@ -16,7 +16,7 @@ function MyDrawer() {
 );
 }
 
-export default function App() {
+export default function Navigation() {
   return (
     <NavigationContainer>
       <MyDrawer />

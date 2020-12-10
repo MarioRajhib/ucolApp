@@ -1,8 +1,13 @@
 import * as React from 'react';
-import Federacion from "./app/screens/Federacion"
+import { Header } from "react-native-elements";
+
 export default function App() {
   return (
-    <Federacion />
+    <Header
+      leftComponent={{ icon: 'menu', color: '#fff' }}
+      centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
+      rightComponent={{ icon: 'home', color: '#fff' }}
+    />
   );
 }
 
