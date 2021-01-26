@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {View, Alert} from 'react-native';
+import PantallaPrincipal from './PantallaPrincipal';
 
 import WebView from 'react-native-webview';
 
@@ -23,7 +24,7 @@ const HTML = `<!DOCTYPE html>\n
     <p id="demo"></p>    
     <script>
       function sendPostMessage() {
-        window.ReactNativeWebView.postMessage('Message from JS');
+        window.ReactNativeWebView.postMessage('Hola');
       }
       window.addEventListener('message',function(event){
         console.log("Message received from RN: ",event.data)
@@ -49,10 +50,14 @@ export default class Messaging extends Component<Props, State> {
         <WebView
           ref={this.webView}
           source={{html: HTML}}
-          onLoadEnd={()=>{this.webView.current.postMessage('Hello from RN');}}
+          onLoadEnd={()=>{
+            
+            this.webView.current.postMessage('Hello from RN');
+          }}
           automaticallyAdjustContentInsets={false}
           onMessage={(e: {nativeEvent: {data?: string}}) => {
-            Alert.alert('Message received from JS: ', e.nativeEvent.data);
+            //Alert.alert('Message received from JS: ', e.nativeEvent.data);
+            <PantallaPrincipal />
           }}
         />
       </View>

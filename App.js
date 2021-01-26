@@ -1,13 +1,10 @@
 import * as React from 'react';
-import { Header } from "react-native-elements";
+import Navigation from './app/navigations/Navigation';
 
 export default function App() {
   return (
-    <Header
-      leftComponent={{ icon: 'menu', color: '#fff' }}
-      centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
-      rightComponent={{ icon: 'home', color: '#fff' }}
-    />
+    <Navigation />
+    
   );
 }
 

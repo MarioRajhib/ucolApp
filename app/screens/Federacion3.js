@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, Alert} from 'react-native';
-
+//import PantallaPrincipal from './PantallaPrincipal';
 import WebView from 'react-native-webview';
 /*
 const HTML = `<!DOCTYPE html>\n
@@ -42,19 +42,27 @@ export default class Messaging extends Component<Props, State> {
     super(props);
     this.webView = React.createRef();
   }
-
+//http://educ.ddns.net:88/federacion/dologinreact.php
   render() {
     return (
       <View style={{height: 820}}>
         <WebView
           ref={this.webView}
-          source={{uri: 'https://www.google.com/url?q=http://educ.ddns.net:88/federacion/dologinreact.php&sa=D&source=hangouts&ust=1606454184637000&usg=AFQjCNFtNanZdsOTS9n9Aa7VptcVaEXE1w'}}
-          onLoadEnd={()=>{this.webView.current.postMessage('Hello from RN');}}
+          source={{uri: 'http://educ.ddns.net:88/federacion/dologininreactcanal.php'}}
+          onLoadEnd={()=>{
+            
+            //this.webView.current.postMessage('Hello from RN');
+            //Alert.alert('Hola');
+          }}
           automaticallyAdjustContentInsets={false}
           onMessage={(e: {nativeEvent: {data?: string}}) => {
+            
             Alert.alert('Message received from JS: ', e.nativeEvent.data);
+            //Alert.alert('Hola');
           }}
+          
         />
+        
       </View>
     );
   }
